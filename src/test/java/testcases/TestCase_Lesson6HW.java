@@ -58,8 +58,8 @@ public class TestCase_Lesson6HW {
     Start with 0 hours,  and complete your loop when day is over.*/
     public void getEverySecondHour() {
         int hourNumber = 1;
-        for (int i = 0; i < 24; i++) {
-            System.out.println("Hour number is " + hourNumber++ + " and it's value: " + i++);
+        for (int i = 0; i < 24; i += 2) {
+            System.out.println("Hour number is " + hourNumber++ + " and it's value: " + i);
         }
     }
 }
