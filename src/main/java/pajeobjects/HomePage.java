@@ -21,5 +21,6 @@ public class HomePage extends BaseMain{
         driver.findElement(By.xpath(btnAccount)).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath(btnSignInMainPage)).click();
+        Thread.sleep(1000);
     }
 }

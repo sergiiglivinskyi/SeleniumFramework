@@ -2,12 +2,7 @@ package testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pajeobjects.HomePage;
-import pajeobjects.SignInPage;
 
 public class Lesson7_POM_Test extends BaseTest {
 
@@ -54,7 +49,7 @@ public class Lesson7_POM_Test extends BaseTest {
     @Test
     public void fillEmailAndPasswordFields() throws InterruptedException {
         homePage.clickSignIn();
-        signInPage.loginWithInvalidData();
+        signInPage.fillTheSignInForm();
     }
     @Test
     public void fillEmailAndPasswordFieldAndPressEnter() throws InterruptedException {
