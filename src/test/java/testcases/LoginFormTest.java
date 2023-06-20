@@ -2,7 +2,7 @@ package testcases;
 
 import org.testng.annotations.Test;
 
-public class Lesson7_POM_HW_Test extends BaseTest {
+public class LoginFormTest extends BaseTest {
     @Test
     public void openSignInPage() throws InterruptedException {
         homePage.clickSignIn();
@@ -32,11 +32,5 @@ public class Lesson7_POM_HW_Test extends BaseTest {
     public void verifyCheckBox() throws InterruptedException {
         homePage.clickSignIn();
         signInPage.verifyCheckboxRememberMeText();
-    }
-    @Test
-    public void isEnabled() {
-        bankOfAmericaHomePage.openWebsite();
-        bankOfAmericaHomePage.openTopicEverydayBanking();
-        bankOfAmericaHomePage.areButtonsEnabled();
     }
 }
