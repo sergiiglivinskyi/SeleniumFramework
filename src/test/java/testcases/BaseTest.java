@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pajeobjects.BankOfAmericaHomePage;
 import pajeobjects.HomePage;
 import pajeobjects.SignInPage;
 
@@ -12,6 +13,7 @@ public class BaseTest {
     WebDriver driver;
     HomePage homePage;
     SignInPage signInPage;
+    BankOfAmericaHomePage bankOfAmericaHomePage;
 
     @BeforeTest
     public void startDriver() {
@@ -19,6 +21,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
         signInPage = new SignInPage(driver);
+        bankOfAmericaHomePage = new BankOfAmericaHomePage(driver);
     }
 
     @AfterTest
