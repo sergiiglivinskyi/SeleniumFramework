@@ -94,7 +94,7 @@ public class MyForkSignUpPage extends BaseMain{
         jobTitles.add("Middle level Developer");
         jobTitles.add("Senior level Developer");
         jobTitles.add("Leading Developer");
-        jobTitles.add("QA Analyst, Software Tester");
+        jobTitles.add("QA Analyst");
         jobTitles.add("Software Tester");
         jobTitles.add("QA Engineer");
         jobTitles.add("Senior QA Engineer");
