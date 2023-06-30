@@ -74,13 +74,17 @@ public class MyForkSignUpPage extends BaseMain{
         }
 
         //Print the results
-        System.out.println("List of roles that are not implemented: " + notImplementedRoles);
-        System.out.println("List of roles that implemented and are not matched with requirements: " + notValidJobTitles);
         if(notImplementedRoles.size() == 0){
-            System.out.println("All dropdown options have been implemented correctly");
+            System.out.println("Success! All dropdown options have been implemented correctly");
+        }else {
+            System.out.println("List of roles that are not implemented: " + notImplementedRoles);
         }
+
+
         if(notValidJobTitles.size() == 0){
-            System.out.println("There are no values that are not matched with requirements in the dropdown");
+            System.out.println("Success! There are no values that are not matched with requirements in the dropdown");
+        }else{
+            System.out.println("List of roles that implemented and are not matched with requirements: " + notValidJobTitles);
         }
     }
 
@@ -90,7 +94,7 @@ public class MyForkSignUpPage extends BaseMain{
         jobTitles.add("Middle level Developer");
         jobTitles.add("Senior level Developer");
         jobTitles.add("Leading Developer");
-        jobTitles.add("QA Analyst");
+        jobTitles.add("QA Analyst, Software Tester");
         jobTitles.add("Software Tester");
         jobTitles.add("QA Engineer");
         jobTitles.add("Senior QA Engineer");
