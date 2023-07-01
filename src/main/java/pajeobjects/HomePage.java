@@ -2,6 +2,11 @@ package pajeobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage extends BaseMain{
 
@@ -16,11 +21,11 @@ public class HomePage extends BaseMain{
     String btnAccount = "//button[@id='account-menu-account-button']";
     String btnSignInMainPage = "//a[text()='Sign In']";
 
-    public void clickSignIn() throws InterruptedException {
+    public void clickSignIn(){
         driver.get(urlBestBuy);
         driver.findElement(By.xpath(btnAccount)).click();
-        Thread.sleep(1000);
+        WebDriverWait waitForDropdownToLoad = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitForDropdownToLoad.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(btnSignInMainPage)));
         driver.findElement(By.xpath(btnSignInMainPage)).click();
-        Thread.sleep(1000);
     }
 }

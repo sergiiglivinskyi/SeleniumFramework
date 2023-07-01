@@ -8,6 +8,8 @@ import pajeobjects.BankOfAmericaHomePage;
 import pajeobjects.HomePage;
 import pajeobjects.SignInPage;
 
+import java.time.Duration;
+
 public class BaseTest {
 
     WebDriver driver;
@@ -22,6 +24,8 @@ public class BaseTest {
         homePage = new HomePage(driver);
         signInPage = new SignInPage(driver);
         bankOfAmericaHomePage = new BankOfAmericaHomePage(driver);
+        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
     @AfterTest
