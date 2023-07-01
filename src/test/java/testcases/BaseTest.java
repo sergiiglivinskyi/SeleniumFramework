@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import pajeobjects.BankOfAmericaHomePage;
-import pajeobjects.HomePage;
-import pajeobjects.SignInPage;
+import pajeobjects.*;
 
 public class BaseTest {
 
@@ -14,6 +12,8 @@ public class BaseTest {
     HomePage homePage;
     SignInPage signInPage;
     BankOfAmericaHomePage bankOfAmericaHomePage;
+    MyForkHomePage myForkHomePage;
+    MyForkSignUpPage myForkSignUpPage;
 
     @BeforeTest
     public void startDriver() {
@@ -22,10 +22,12 @@ public class BaseTest {
         homePage = new HomePage(driver);
         signInPage = new SignInPage(driver);
         bankOfAmericaHomePage = new BankOfAmericaHomePage(driver);
+        myForkHomePage = new MyForkHomePage(driver);
+        myForkSignUpPage = new MyForkSignUpPage(driver);
     }
 
     @AfterTest
     public void closeBrowser() {
-//        driver.quit();
+        driver.quit();
     }
 }
