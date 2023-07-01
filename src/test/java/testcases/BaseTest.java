@@ -25,11 +25,11 @@ public class BaseTest {
         signInPage = new SignInPage(driver);
         bankOfAmericaHomePage = new BankOfAmericaHomePage(driver);
         driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
     @AfterTest
     public void closeBrowser() {
-//        driver.quit();
+        driver.quit();
     }
 }
