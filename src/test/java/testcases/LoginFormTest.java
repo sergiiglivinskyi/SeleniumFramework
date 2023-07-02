@@ -4,32 +4,32 @@ import org.testng.annotations.Test;
 
 public class LoginFormTest extends BaseTest {
     @Test
-    public void openSignInPage() throws InterruptedException {
+    public void openSignInPage() {
         homePage.clickSignIn();
     }
     @Test
-    public void fillEmailAndPasswordFields() throws InterruptedException {
+    public void fillEmailAndPasswordFields() {
         homePage.clickSignIn();
         signInPage.fillTheSignInForm();
     }
     @Test
-    public void fillEmailAndPasswordFieldAndPressEnter() throws InterruptedException {
+    public void fillEmailAndPasswordFieldAndPressEnter() {
         homePage.clickSignIn();
         signInPage.loginWithPressEnter();
     }
     @Test
-    public void fillEmailAndPasswordFieldAndValidateError() throws InterruptedException {
+    public void fillEmailAndPasswordFieldAndValidateError() {
         homePage.clickSignIn();
         signInPage.loginWithPressEnter();
         signInPage.isErrorMessageDisplayed();
     }
     @Test
-    public void fillEmailAndPasswordFieldAndValidateCheckbox() throws InterruptedException {
+    public void fillEmailAndPasswordFieldAndValidateCheckbox() {
         homePage.clickSignIn();
         signInPage.isCheckboxRememberMeSelected();
     }
     @Test
-    public void verifyCheckBox() throws InterruptedException {
+    public void verifyCheckBox() {
         homePage.clickSignIn();
         signInPage.verifyCheckboxRememberMeText();
     }
