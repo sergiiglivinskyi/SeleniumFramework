@@ -11,8 +11,8 @@ public class TabAndScrollActionsTest extends BaseTest{
         driver.switchTo().newWindow(WindowType.TAB); //3rd
         driver.switchTo().newWindow(WindowType.TAB); //4th
         //Go to the 3rd tab
-        switchToTab(2);
+        myForkHomePage.switchToTab(2);
         driver.navigate().to("https://www.bestbuy.com/");
-        verticalScroll(3000);
+        myForkHomePage.verticalScroll(3000);
     }
 }

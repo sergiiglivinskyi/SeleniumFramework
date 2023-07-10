@@ -40,14 +40,4 @@ public class BaseTest {
     public void closeBrowser() {
 //        driver.quit();
     }
-
-    public void switchToTab(int tab) {
-        List<String> tabHandler = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabHandler.get(tab));
-    }
-
-    public void verticalScroll(int pixels){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0," + pixels + ")", "");
-    }
 }
