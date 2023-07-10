@@ -37,10 +37,9 @@ public class SignInPage extends BaseMain{
         driver.findElement(By.xpath(btnSignInLoginPage)).submit();
     }
 
-    public void loginWithPressEnter() throws InterruptedException{
+    public void loginWithPressEnter() {
         fillEmailAndPassword(dataEmail, dataPassword);
         driver.findElement(By.xpath(fieldPassword)).sendKeys(Keys.ENTER);
-        Thread.sleep(1000);
     }
 
     public void isErrorMessageDisplayed() {
