@@ -38,6 +38,6 @@ public class BaseTest {
 
     @AfterTest
     public void closeBrowser() {
-//        driver.quit();
+        driver.quit();
     }
 }
