@@ -3,8 +3,7 @@ package testcases;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pajeobjects.*;
 
 import java.time.Duration;
@@ -21,7 +20,7 @@ public class BaseTest {
     MyForkSignUpPage myForkSignUpPage;
     MyForkSignInPage myForkSignInPage;
 
-    @BeforeTest
+    @BeforeMethod
     public void startDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumProject/src/test/resources/chromedriver");
         driver = new ChromeDriver();
@@ -36,7 +35,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeBrowser() {
         driver.quit();
     }
