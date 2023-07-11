@@ -11,6 +11,7 @@
     <test name="Amazon">
         <classes>
             <class name="testcases.DriverInteractionsTest"/>
+            <class name="testcases.AssertionsTest"/>
         </classes>
     </test>
 </suite>
