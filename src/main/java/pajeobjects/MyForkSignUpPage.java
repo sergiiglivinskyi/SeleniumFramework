@@ -4,18 +4,33 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyForkSignUpPage extends BaseMain{
+
+
+    //Expected and Actual data
+    String expectedTitle = "Sign Up";
+    String actualTitle;
+    int expectedDropDownListSize = 14;
+    int actualDropDownListSize;
+    Boolean isTermsConditionsTextCorrect;
+    String termsAndConditionsText = "Agree with Terms and Conditions";
+
+    //GUI elements XPaths
+    String termsAndConditions = "//div[@class='auth-page-agree-terms-text']";
+
     public MyForkSignUpPage(WebDriver driver) {
         super(driver);
     }
 
     //Web Elements
     private WebElement jobTitleDropdownElement;
+    private WebElement termsAndConditionsElement;
 
     //Dropdown
     private Select jobTitleDropdown;
@@ -30,7 +45,7 @@ public class MyForkSignUpPage extends BaseMain{
     private List<String> notImplementedRoles = new ArrayList<>();
 
     //List of roles that implemented and are not matched with requirements
-    private List<String> notValidJobTitles = new ArrayList<>();
+    private List<String> jobTitlesFromDropDown = new ArrayList<>();
 
     //Assign dropdown element and get the list of dropdown options
     private void setDropdownValues() {
@@ -66,9 +81,9 @@ public class MyForkSignUpPage extends BaseMain{
 
         //Verify if there are values are implemented and are not matched with the requirements
         for(String jobTitle: jobTitles) {
-            for(int i = 0; i < notValidJobTitles.size(); i++){
-                if(jobTitle.equals(notValidJobTitles.get(i))){
-                    notValidJobTitles.remove(i);
+            for(int i = 0; i < jobTitlesFromDropDown.size(); i++){
+                if(jobTitle.equals(jobTitlesFromDropDown.get(i))){
+                    jobTitlesFromDropDown.remove(i);
                 }
             }
         }
@@ -81,10 +96,10 @@ public class MyForkSignUpPage extends BaseMain{
         }
 
 
-        if(notValidJobTitles.size() == 0){
+        if(jobTitlesFromDropDown.size() == 0){
             System.out.println("Success! There are no values that are not matched with requirements in the dropdown");
         }else{
-            System.out.println("List of roles that implemented and are not matched with requirements: " + notValidJobTitles);
+            System.out.println("List of roles that implemented and are not matched with requirements: " + jobTitlesFromDropDown);
         }
     }
 
@@ -109,7 +124,57 @@ public class MyForkSignUpPage extends BaseMain{
     //Fill the new list with implemented dropdown values
     private void setNewListWithDropdownOptions() {
         for (WebElement dropdownOption: dropdownOptions) {
-            notValidJobTitles.add(dropdownOption.getText());
+            jobTitlesFromDropDown.add(dropdownOption.getText());
         }
+    }
+
+    private void setUpForAssertions(){
+        //Page title
+        actualTitle = driver.getTitle();
+
+        //Terms and conditions element text
+        termsAndConditionsElement = driver.findElement(By.xpath(termsAndConditions));
+        if(termsAndConditionsElement.getText().equals(termsAndConditionsText)) {
+            isTermsConditionsTextCorrect = true;
+        }else {
+            isTermsConditionsTextCorrect = false;
+        }
+
+        //Drop down options
+        setDropdownValues();
+        setExpectedRoleValues();
+        setNewListWithDropdownOptions();
+        actualDropDownListSize = dropdownOptions.size();
+    }
+
+    public void validateCorrectnessOfImplementationWithHardAssertions() {
+        setUpForAssertions();
+
+        //String - passed
+        Assert.assertEquals(actualTitle, expectedTitle);
+        //Boolean - passed
+        Assert.assertTrue(isTermsConditionsTextCorrect);
+        //int - passed
+        Assert.assertEquals(actualDropDownListSize, expectedDropDownListSize);
+        //List<String> - failed
+        Assert.assertEquals(jobTitlesFromDropDown, jobTitles, "The requirements are not matched with implemented drop down options");
+    }
+
+    public void validateCorrectnessOfImplementationWithSoftAssertions() {
+        expectedDropDownListSize = 10;
+        termsAndConditionsText = "Agree";
+
+        setUpForAssertions();
+        SoftAssert softAssert = new SoftAssert();
+
+        //String - passed
+        softAssert.assertEquals(actualTitle, expectedTitle);
+        //Boolean - failed
+        softAssert.assertTrue(isTermsConditionsTextCorrect, "Terms and Conditions text is incorrect");
+        //int - failed
+        softAssert.assertEquals(actualDropDownListSize, expectedDropDownListSize, "Drop down list size is different");
+        //List<String> - failed
+        softAssert.assertEquals(jobTitlesFromDropDown, jobTitles, "The requirements are not matched with implemented drop down options");
+        softAssert.assertAll();
     }
 }
