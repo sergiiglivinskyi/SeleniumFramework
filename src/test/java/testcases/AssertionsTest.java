@@ -18,7 +18,6 @@ public class AssertionsTest extends BaseTest{
     //Hard Assertions
     @Test
     public void dropdown() {
-//        driver.get("https://clinic.amazon.com/?nodl=0&ref_=nav_cs_clinic");
         driver.get("https://www.bestbuy.com/");
         actualTitle = driver.getTitle();
 
