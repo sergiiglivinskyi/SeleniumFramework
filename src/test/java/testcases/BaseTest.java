@@ -18,7 +18,7 @@ public class BaseTest {
     MyForkSignUpPage myForkSignUpPage;
     MyForkSignInPage myForkSignInPage;
 
-    @BeforeMethod(groups = {"checkbox"}, alwaysRun = true)
+    @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumProject/src/test/resources/chromedriver");
         driver = new ChromeDriver();
@@ -33,7 +33,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
-    @AfterMethod(groups = {"checkbox"}, alwaysRun = true)
+    @AfterMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void closeBrowser() {
         driver.quit();
     }
