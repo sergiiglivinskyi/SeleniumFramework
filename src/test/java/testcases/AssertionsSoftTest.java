@@ -2,7 +2,6 @@ package testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -17,7 +16,7 @@ public class AssertionsSoftTest extends BaseTest{
     int listSizeExpected = 8;
 
     //Hard Assertions
-    @Test
+    @Test(groups = {"assertions"})
     public void dropdown() {
         driver.get("https://www.bestbuy.com/");
         actualTitle = driver.getTitle();

@@ -1,14 +1,12 @@
 package testcases;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import pajeobjects.*;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BaseTest {
 
@@ -20,7 +18,7 @@ public class BaseTest {
     MyForkSignUpPage myForkSignUpPage;
     MyForkSignInPage myForkSignInPage;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"checkbox"}, alwaysRun = true)
     public void startDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumProject/src/test/resources/chromedriver");
         driver = new ChromeDriver();
@@ -35,7 +33,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"checkbox"}, alwaysRun = true)
     public void closeBrowser() {
         driver.quit();
     }

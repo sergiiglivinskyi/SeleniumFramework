@@ -7,28 +7,28 @@ public class LoginFormTest extends BaseTest {
     public void openSignInPage() {
         homePage.clickSignIn();
     }
-    @Test
+    @Test(priority = 3, groups = {"login"})
     public void fillEmailAndPasswordFields() {
         homePage.clickSignIn();
         signInPage.fillTheSignInForm();
     }
-    @Test
+    @Test(priority = 3, groups = {"login"})
     public void fillEmailAndPasswordFieldAndPressEnter() {
         homePage.clickSignIn();
         signInPage.loginWithPressEnter();
     }
-    @Test
+    @Test(priority = 3, groups = {"login"})
     public void fillEmailAndPasswordFieldAndValidateError() {
         homePage.clickSignIn();
         signInPage.loginWithPressEnter();
         signInPage.isErrorMessageDisplayed();
     }
-    @Test
+    @Test(priority = 2, groups = {"checkbox"})
     public void fillEmailAndPasswordFieldAndValidateCheckbox() {
         homePage.clickSignIn();
         signInPage.isCheckboxRememberMeSelected();
     }
-    @Test
+    @Test(priority = 1, groups = {"checkbox"})
     public void verifyCheckBox() {
         homePage.clickSignIn();
         signInPage.verifyCheckboxRememberMeText();

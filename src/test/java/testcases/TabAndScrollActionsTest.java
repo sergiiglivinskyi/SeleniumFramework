@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class TabAndScrollActionsTest extends BaseTest{
 
-    @Test
+    @Test(groups = {"login"})
     public void switchTabAndScrollDown() {
         driver.switchTo().newWindow(WindowType.TAB); //2nd
         driver.switchTo().newWindow(WindowType.TAB); //3rd
