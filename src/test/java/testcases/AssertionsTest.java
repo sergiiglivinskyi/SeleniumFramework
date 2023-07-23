@@ -16,7 +16,7 @@ public class AssertionsTest extends BaseTest{
     int listSizeExpected = 8;
 
     //Hard Assertions
-    @Test
+    @Test(groups = {"driver"})
     public void dropdown() {
         driver.get("https://www.bestbuy.com/");
         actualTitle = driver.getTitle();

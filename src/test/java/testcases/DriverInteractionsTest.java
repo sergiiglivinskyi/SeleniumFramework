@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DriverInteractionsTest extends BaseTest {
-    @Test
+    @Test(priority = 2, groups = {"driver"})
     public void test1() {
         driver.get("https://www.amazon.com/");
         driver.navigate().refresh();
@@ -22,7 +22,7 @@ public class DriverInteractionsTest extends BaseTest {
         System.out.println(title);
     }
 
-    @Test
+    @Test(priority = 1, groups = {"driver"})
     public void test2() {
         driver.get("https://www.amazon.com/");
         driver.switchTo().newWindow(WindowType.TAB);

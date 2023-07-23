@@ -9,6 +9,11 @@
     </test>
 
     <test name="Amazon">
+        <groups>
+            <run>
+                <include name="driver"/>
+            </run>
+        </groups>
         <classes>
             <class name="testcases.DriverInteractionsTest"/>
             <class name="testcases.AssertionsTest"/>
