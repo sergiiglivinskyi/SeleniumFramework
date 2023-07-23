@@ -39,4 +39,10 @@ public class MyForkSignInPage extends BaseMain {
         System.out.println("Error message: " + errorMessageElement.getText());
         Assert.assertTrue(isErrorMessageCorrect);
     }
+
+    public void loginWithCredentials(String email, String password) {
+        driver.findElement(By.id("email")).sendKeys(email);
+        driver.findElement(By.id("password")).sendKeys(password);
+        driver.findElement(By.xpath(btnLogin)).submit();
+    }
 }
