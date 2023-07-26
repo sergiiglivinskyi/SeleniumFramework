@@ -34,8 +34,7 @@ public class BaseMain {
         }
     }
 
-    public void setListWithTextForImplementedValues(List<WebElement> webElements, List<String> implementedValuesInText, By locator) {
-        webElements = driver.findElements(locator);
+    public void setListWithTextForImplementedValues(List<WebElement> webElements, List<String> implementedValuesInText) {
         for(WebElement element : webElements) {
             implementedValuesInText.add(element.getText());
         }

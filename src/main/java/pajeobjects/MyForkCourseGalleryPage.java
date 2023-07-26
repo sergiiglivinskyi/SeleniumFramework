@@ -2,7 +2,6 @@ package pajeobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -31,9 +30,6 @@ public class MyForkCourseGalleryPage extends BaseMain{
     //List of implemented area values
     private List<String> implementedAreaValuesString = new ArrayList<>();
 
-    //List of Web elements
-    private List<WebElement> areaValuesElements;
-
     private static int numberOfQuizQuestions;
 
     public void isHistoryDisplayed(boolean isLoggedIn) {
@@ -50,7 +46,7 @@ public class MyForkCourseGalleryPage extends BaseMain{
 
     public void verifyAreaValues() {
         setExpectedAreaValues();
-        setListWithTextForImplementedValues(areaValuesElements, implementedAreaValuesString, areaListLocator);
+        setListWithTextForImplementedValues(driver.findElements(areaListLocator), implementedAreaValuesString);
         Assert.assertEquals(implementedAreaValuesString, expectedAreaValues, "The area values have been implemented incorrectly");
     }
 
