@@ -55,6 +55,6 @@ public class BaseTest {
         log.addHandler(fileHandler);
         SimpleFormatter formatter = new SimpleFormatter();
         fileHandler.setFormatter(formatter);
-        log.info("This is the beginning of the test suite");
+        log.info("==================THIS IS THE BEGINNING OF THE TEST==================");
     }
 }

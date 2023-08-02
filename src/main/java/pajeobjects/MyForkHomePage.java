@@ -1,6 +1,5 @@
 package pajeobjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.logging.Logger;
@@ -23,15 +22,15 @@ public class MyForkHomePage extends BaseMain{
     }
 
     public void openSignUpPage() {
-        driver.findElement(By.xpath(btnSignUp)).click();
+        clickUsingXpath(btnSignUp, "Sign Up button");
     }
 
     public void openSignInPage() {
-        driver.findElement(By.xpath(btnSignIn)).click();
+        clickUsingXpath(btnSignIn, "Sign In button");
     }
 
     public void openCourseGalleryPage() {
-        driver.findElement(By.xpath(linkCourseGallery)).click();
+        clickUsingXpath(linkCourseGallery, "Course Gallery link");
     }
 
     public void goToMainPage() {
