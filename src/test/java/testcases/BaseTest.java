@@ -17,6 +17,8 @@ public class BaseTest {
     MyForkHomePage myForkHomePage;
     MyForkSignUpPage myForkSignUpPage;
     MyForkSignInPage myForkSignInPage;
+    MyForkCourseGalleryPage myForkCourseGalleryPage;
+    MyForkQuizPage myForkQuizPage;
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() {
@@ -28,9 +30,11 @@ public class BaseTest {
         myForkHomePage = new MyForkHomePage(driver);
         myForkSignUpPage = new MyForkSignUpPage(driver);
         myForkSignInPage = new MyForkSignInPage(driver);
+        myForkCourseGalleryPage = new MyForkCourseGalleryPage(driver);
+        myForkQuizPage = new MyForkQuizPage(driver);
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @AfterMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
