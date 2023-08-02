@@ -8,10 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 public class MyForkSignInPage extends BaseMain {
-    public MyForkSignInPage(WebDriver driver) {
-        super(driver);
+    public MyForkSignInPage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     WebElement errorMessageElement;

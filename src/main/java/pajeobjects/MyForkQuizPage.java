@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import java.util.logging.Logger;
+
 public class MyForkQuizPage extends BaseMain{
-    public MyForkQuizPage(WebDriver driver) {
-        super(driver);
+    public MyForkQuizPage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //GUI elements XPaths

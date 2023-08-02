@@ -3,10 +3,12 @@ package pajeobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.logging.Logger;
+
 public class BankOfAmericaHomePage extends BaseMain{
 
-    public BankOfAmericaHomePage(WebDriver driver) {
-        super(driver);
+    public BankOfAmericaHomePage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //URL

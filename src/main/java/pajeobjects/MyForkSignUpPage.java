@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MyForkSignUpPage extends BaseMain{
 
@@ -24,8 +25,8 @@ public class MyForkSignUpPage extends BaseMain{
     //GUI elements XPaths
     String termsAndConditions = "//div[@class='auth-page-agree-terms-text']";
 
-    public MyForkSignUpPage(WebDriver driver) {
-        super(driver);
+    public MyForkSignUpPage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //Web Elements

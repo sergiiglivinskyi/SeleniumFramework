@@ -6,11 +6,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 public class HomePage extends BaseMain{
 
-    public HomePage(WebDriver driver){
-        super(driver);
+    public HomePage(WebDriver driver, Logger log){
+        super(driver, log);
     }
 
     //URLs

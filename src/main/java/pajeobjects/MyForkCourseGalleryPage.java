@@ -6,10 +6,11 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MyForkCourseGalleryPage extends BaseMain{
-    public MyForkCourseGalleryPage(WebDriver driver) {
-        super(driver);
+    public MyForkCourseGalleryPage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //GUI elements XPaths

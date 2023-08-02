@@ -3,9 +3,11 @@ package pajeobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.logging.Logger;
+
 public class MyForkHomePage extends BaseMain{
-    public MyForkHomePage(WebDriver driver) {
-        super(driver);
+    public MyForkHomePage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //URLs

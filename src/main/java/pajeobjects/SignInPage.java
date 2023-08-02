@@ -3,11 +3,14 @@ package pajeobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.logging.Logger;
 
 public class SignInPage extends BaseMain{
 
-    public SignInPage(WebDriver driver) {
-        super(driver);
+    public SignInPage(WebDriver driver, Logger log) {
+        super(driver, log);
     }
 
     //GUI elements XPaths
@@ -52,5 +55,18 @@ public class SignInPage extends BaseMain{
 
     public void verifyCheckboxRememberMeText() {
         System.out.println(driver.findElement(By.xpath(checkboxRememberMeLabel)).getText().contains(checkboxRememberMeText));
+    }
+
+    public void signIn(String emailValue, String passwordValue) {
+//        driver.findElement(By.xpath(fieldEmail)).sendKeys(emailValue);
+        typeUsingXpath(fieldEmail, "email text field", emailValue);
+
+//        driver.findElement(By.xpath(fieldPassword)).sendKeys(passwordValue);
+        typeUsingXpath(fieldPassword, "password text field", passwordValue);
+
+//        driver.findElement(By.xpath(btnSignInLoginPage)).submit();
+//        clickUsingXpath(btnSignInLoginPage, "Sign In button");
+        WebElement btnLogin = driver.findElement(By.xpath(btnSignInLoginPage));
+        clickUsingWebElement(btnLogin, "Sign In button");
     }
 }

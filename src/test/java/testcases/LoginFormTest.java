@@ -33,4 +33,9 @@ public class LoginFormTest extends BaseTest {
         homePage.clickSignIn();
         signInPage.verifyCheckboxRememberMeText();
     }
+    @Test
+    public void signIn() {
+        homePage.clickSignIn();
+        signInPage.signIn("test@test.com", "password");
+    }
 }

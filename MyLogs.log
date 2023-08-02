@@ -1,0 +1,8 @@
+Aug 02, 2023 3:55:01 PM testcases.BaseTest saveLogs
+INFO: This is the beginning of the test suite
+Aug 02, 2023 3:55:10 PM pajeobjects.BaseMain typeUsingXpath
+INFO: Value: test@test.com was successfully entered into email text field element
+Aug 02, 2023 3:55:11 PM pajeobjects.BaseMain typeUsingXpath
+INFO: Value: password was successfully entered into password text field element
+Aug 02, 2023 3:55:11 PM pajeobjects.BaseMain clickUsingWebElement
+INFO: Element: Sign In button was successfully clicked
