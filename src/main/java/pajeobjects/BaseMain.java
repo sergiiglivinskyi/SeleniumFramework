@@ -31,9 +31,9 @@ public class BaseMain {
 
     public void isElementDisplayedDependsOfLogin(By locator, boolean isLoggedIn) {
         if (isLoggedIn) {
-            Assert.assertTrue(driver.findElement(locator).isDisplayed());
+            validateBooleanWithAssertTrue(driver.findElement(locator).isDisplayed());
         } else {
-            Assert.assertTrue(driver.findElements(locator).isEmpty());
+            validateBooleanWithAssertTrue(driver.findElements(locator).isEmpty());
         }
     }
 
@@ -45,7 +45,12 @@ public class BaseMain {
 
     public void clickUsingXpath(String xpath, String elementName) {
         driver.findElement(By.xpath(xpath)).click();
-        System.out.println("Element: " + elementName + " was successfully clicked");
+        log.info("Element: " + elementName + " was successfully clicked");
+    }
+
+    public void clickUsingXpath(By xpath, String elementName) {
+        driver.findElement(xpath).click();
+        log.info("Element: " + elementName + " was successfully clicked");
     }
 
     public void clickUsingWebElement(WebElement element, String elementName) {
@@ -56,5 +61,30 @@ public class BaseMain {
     public void typeUsingXpath(String xpath, String elementName, String value) {
         driver.findElement(By.xpath(xpath)).sendKeys(value);
         log.info("Value: " + value + " was successfully entered into " + elementName + " element");
+    }
+
+    public void typeUsingId(String id, String elementName, String value) {
+        driver.findElement(By.id(id)).sendKeys(value);
+        log.info("Value: " + value + " was successfully entered into " + elementName + " element");
+    }
+
+    public void validateBooleanWithAssertTrue(Boolean statement) {
+        Assert.assertTrue(statement);
+        log.info("Validation passed successfully");
+    }
+
+    public void validateListOfStringWithAssertEqual(List<String> actualValue, List<String> expectedValue) {
+        Assert.assertEquals(actualValue, expectedValue);
+        log.info("Validation passed successfully. Lists are equal");
+    }
+
+    public void validateListOfStringWithAssertEqual(List<String> actualValue, List<String> expectedValue, String errorMessage) {
+        Assert.assertEquals(actualValue, expectedValue, errorMessage);
+        log.info("Validation passed successfully. Lists are equal");
+    }
+
+    public void validateIntWithAssertEqual(int actualValue, int expectedValue) {
+        Assert.assertEquals(actualValue, expectedValue);
+        log.info("Validation passed successfully. Integer values are the same");
     }
 }

@@ -42,8 +42,8 @@ public class MyForkSignInPage extends BaseMain {
     }
 
     public void loginWithCredentials(String email, String password) {
-        driver.findElement(By.id("email")).sendKeys(email);
-        driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.xpath(btnLogin)).submit();
+        typeUsingId("email", "Email text field", email);
+        typeUsingId("password", "Password text field", password);
+        clickUsingXpath(btnLogin, "Login button");
     }
 }

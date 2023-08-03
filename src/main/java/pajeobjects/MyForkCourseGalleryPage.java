@@ -2,7 +2,6 @@ package pajeobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +47,7 @@ public class MyForkCourseGalleryPage extends BaseMain{
     public void verifyAreaValues() {
         setExpectedAreaValues();
         setListWithTextForImplementedValues(driver.findElements(areaListLocator), implementedAreaValuesString);
-        Assert.assertEquals(implementedAreaValuesString, expectedAreaValues, "The area values have been implemented incorrectly");
+        validateListOfStringWithAssertEqual(implementedAreaValuesString, expectedAreaValues, "The area values have been implemented incorrectly");
     }
 
     public int getNumberOfQuizQuestions() {
@@ -60,7 +59,7 @@ public class MyForkCourseGalleryPage extends BaseMain{
     }
 
     public void clickOnStartButton() {
-        driver.findElement(btnStartLocator).click();
+        clickUsingXpath(btnStartLocator, "Start button on the Gallery Page");
     }
 
     public static int getNumberOfQuestions(){

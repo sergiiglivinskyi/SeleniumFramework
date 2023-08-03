@@ -2,7 +2,6 @@ package pajeobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import java.util.logging.Logger;
 
@@ -24,7 +23,7 @@ public class MyForkQuizPage extends BaseMain{
 
 
     public void selectTheAnswer() {
-        driver.findElement(answerLocator).click();
+        clickUsingXpath(answerLocator, "Answer section");
     }
 
     private int getProgressValue() {
@@ -36,11 +35,11 @@ public class MyForkQuizPage extends BaseMain{
     public void verifyProgressValue(double numberOfAnsweredQuestions) {
         totalNumberOfQuestions = MyForkCourseGalleryPage.getNumberOfQuestions();
         double correctValue = (numberOfAnsweredQuestions / totalNumberOfQuestions) * 100;
-        Assert.assertEquals(getProgressValue(), (int)correctValue);
+        validateIntWithAssertEqual(getProgressValue(), (int)correctValue);
     }
 
     public void clickOnNextButton() {
-        driver.findElement(btnNextLocator).click();
+        clickUsingXpath(btnNextLocator, "Next button");
     }
 
     public void verifyQuizProgressBarForAllAnswers() {
