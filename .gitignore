@@ -3,3 +3,6 @@
 target/*
 src/test/resources/chromedriver
 test-output/*
+MyLogs.log
+MyLogs.log.1
+MyLogs.log.2

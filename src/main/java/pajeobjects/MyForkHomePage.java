@@ -2,6 +2,7 @@ package pajeobjects;
 
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 public class MyForkHomePage extends BaseMain{
@@ -10,7 +11,8 @@ public class MyForkHomePage extends BaseMain{
     }
 
     //URLs
-    String urlMyFork = "https://test.my-fork.com/";
+//    String urlMyFork = "https://test.my-fork.com/";
+    String urlMyFork = "https://netflix.com";
 
     //GUI elements XPaths
     String btnSignUp = "//div[@id='sign-up-button']/..";
@@ -35,6 +37,10 @@ public class MyForkHomePage extends BaseMain{
 
     public void goToMainPage() {
         driver.get(urlMyFork);
+    }
+
+    public List<Integer> urlVerification() {
+        return verifyLinkActive();
     }
 
 }
