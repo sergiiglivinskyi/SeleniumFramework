@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -103,7 +104,6 @@ public class BaseMain {
             collectedURLs.add(linkElement.getAttribute("href"));
         }
 
-
         for(String collectedURL: collectedURLs) { // this loop will execute actions below to fill up codes List with actual values
             System.out.println("Starting verification of " + collectedURL);
             try { //making sure that exception won't fail the execution to carry execution on
@@ -121,7 +121,11 @@ public class BaseMain {
         return codes; //a return of a list with codes for further verification
     }
 
-
-
-
+    public void verifyServerStatusCodes(List<Integer> codes) {
+        SoftAssert softAssert = new SoftAssert();
+        for(Integer code : codes) {
+            softAssert.assertEquals(code, (Integer) 200);
+            softAssert.assertAll();
+        }
+    }
 }

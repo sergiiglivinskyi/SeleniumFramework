@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class MyForkSignInPage extends BaseMain {
@@ -45,5 +46,9 @@ public class MyForkSignInPage extends BaseMain {
         typeUsingId("email", "Email text field", email);
         typeUsingId("password", "Password text field", password);
         clickUsingXpath(btnLogin, "Login button");
+    }
+
+    public List<Integer> urlVerification() {
+        return verifyLinkActive();
     }
 }

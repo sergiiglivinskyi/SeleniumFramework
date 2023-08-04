@@ -178,4 +178,8 @@ public class MyForkSignUpPage extends BaseMain{
         softAssert.assertEquals(jobTitlesFromDropDown, jobTitles, "The requirements are not matched with implemented drop down options");
         softAssert.assertAll();
     }
+
+    public List<Integer> urlVerification() {
+        return verifyLinkActive();
+    }
 }

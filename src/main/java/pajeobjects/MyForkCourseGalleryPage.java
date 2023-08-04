@@ -65,4 +65,8 @@ public class MyForkCourseGalleryPage extends BaseMain{
     public static int getNumberOfQuestions(){
         return numberOfQuizQuestions;
     }
+
+    public List<Integer> urlVerification() {
+        return verifyLinkActive();
+    }
 }
