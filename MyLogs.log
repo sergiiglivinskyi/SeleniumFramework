@@ -1,2 +1,4 @@
-Aug 03, 2023 6:25:17 PM testcases.BaseTest saveLogs
+Aug 03, 2023 11:21:12 PM testcases.BaseTest saveLogs
 INFO: ==================THIS IS THE BEGINNING OF THE TEST==================
+Aug 03, 2023 11:21:16 PM pajeobjects.BaseMain clickUsingXpath
+INFO: Element: Course Gallery link was successfully clicked
