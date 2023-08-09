@@ -6,7 +6,7 @@ public class AskQuestionPageTest extends BaseTest{
 
     @Test
     public void checkFillingQuestionFormWithAllFields() {
-        myForkHomePage.openWebsite();
+        myForkHomePage.openHomePage();
         myForkHomePage.clickAskQst();
         askQuestionPage.fillQuestionFormAllFields();
         askQuestionPage.validateThatAlertTextIsCorrect();
@@ -14,7 +14,7 @@ public class AskQuestionPageTest extends BaseTest{
 
     @Test
     public void checkFillingQuestionFormWithMandatoryFields() {
-        myForkHomePage.openWebsite();
+        myForkHomePage.openHomePage();
         myForkHomePage.clickAskQst();
         askQuestionPage.fillQuestionFormMandatoryFields();
         askQuestionPage.validateThatAlertTextIsCorrect();

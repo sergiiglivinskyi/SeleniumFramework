@@ -16,6 +16,7 @@ public class MyForkHomePage extends BaseMain{
     //URLs
 //    String urlMyFork = "https://test.my-fork.com/";
     String urlMyFork = "https://netflix.com";
+    String baseUrl = "https://test.my-fork.com/";
 
     //GUI elements XPaths
     String btnSignUp = "//div[@id='sign-up-button']/..";
@@ -26,6 +27,9 @@ public class MyForkHomePage extends BaseMain{
         driver.get(urlMyFork);
     }
 
+    public void openHomePage() {
+        driver.get(baseUrl);
+    }
     public void openSignUpPage() {
         clickUsingXpath(btnSignUp, "Sign Up button");
     }
