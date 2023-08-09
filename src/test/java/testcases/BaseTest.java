@@ -28,14 +28,16 @@ public class BaseTest {
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumProject/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/ekaterinabolotova/IdeaProjects/SeleniumFramework/src/test/resources/webdrivers/chromedriver");
+
         driver = new ChromeDriver();
         log = Logger.getLogger(getClass().getName());
         saveLogs(log);
 
-        //homePage = new HomePage(driver, log);
-        //signInPage = new SignInPage(driver, log);
-        //bankOfAmericaHomePage = new BankOfAmericaHomePage(driver, log);
+        homePage = new HomePage(driver, log);
+        signInPage = new SignInPage(driver, log);
+        bankOfAmericaHomePage = new BankOfAmericaHomePage(driver, log);
         myForkHomePage = new MyForkHomePage(driver, log);
         myForkSignUpPage = new MyForkSignUpPage(driver, log);
         myForkSignInPage = new MyForkSignInPage(driver, log);
@@ -53,7 +55,9 @@ public class BaseTest {
     }
 
     public void saveLogs(Logger log) throws IOException {
+        //FileHandler fileHandler = new FileHandler("/Users/serhii/Documents/SDET_COURSE/SeleniumFramework/MyLogs.log");
         FileHandler fileHandler = new FileHandler("/Users/ekaterinabolotova/IdeaProjects/SeleniumFramework/MyLogs.log");
+
         log.addHandler(fileHandler);
         SimpleFormatter formatter = new SimpleFormatter();
         fileHandler.setFormatter(formatter);

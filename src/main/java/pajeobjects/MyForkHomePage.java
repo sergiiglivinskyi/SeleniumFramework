@@ -14,8 +14,8 @@ public class MyForkHomePage extends BaseMain{
     }
 
     //URLs
-    String urlMyFork = "https://test.my-fork.com/";
-    //String urlMyFork = "https://netflix.com";
+//    String urlMyFork = "https://test.my-fork.com/";
+    String urlMyFork = "https://netflix.com";
 
     //GUI elements XPaths
     String btnSignUp = "//div[@id='sign-up-button']/..";
