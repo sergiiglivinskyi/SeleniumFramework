@@ -1,11 +1,14 @@
 package pajeobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 import java.util.logging.Logger;
 
 public class MyForkHomePage extends BaseMain{
+    By askQst = By.xpath("//div[@class='home-head-content-left-share-question-button-text']");
+
     public MyForkHomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
@@ -13,6 +16,7 @@ public class MyForkHomePage extends BaseMain{
     //URLs
 //    String urlMyFork = "https://test.my-fork.com/";
     String urlMyFork = "https://netflix.com";
+    String baseUrl = "https://test.my-fork.com/";
 
     //GUI elements XPaths
     String btnSignUp = "//div[@id='sign-up-button']/..";
@@ -23,6 +27,9 @@ public class MyForkHomePage extends BaseMain{
         driver.get(urlMyFork);
     }
 
+    public void openHomePage() {
+        driver.get(baseUrl);
+    }
     public void openSignUpPage() {
         clickUsingXpath(btnSignUp, "Sign Up button");
     }
@@ -41,6 +48,10 @@ public class MyForkHomePage extends BaseMain{
 
     public List<Integer> urlVerification() {
         return verifyLinkActive();
+    }
+
+    public void clickAskQst(){
+        driver.findElement(askQst).click();
     }
 
 }
