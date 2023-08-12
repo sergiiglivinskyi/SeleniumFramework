@@ -16,7 +16,7 @@
         </groups>
         <classes>
             <class name="testcases.DriverInteractionsTest"/>
-            <class name="testcases.AssertionsTest"/>
+<!--            <class name="testcases.AssertionsTest"/>-->
         </classes>
     </test>
 </suite>

@@ -19,6 +19,4 @@ public class AskQuestionPageTest extends BaseTest{
         askQuestionPage.fillQuestionFormMandatoryFields();
         askQuestionPage.validateThatAlertTextIsCorrect();
     }
-
-
 }

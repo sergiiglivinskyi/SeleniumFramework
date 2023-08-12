@@ -28,7 +28,7 @@ public class BaseTest {
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumProject/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumFramework/src/test/resources/webdrivers/chromedriver");
         driver = new ChromeDriver();
         log = Logger.getLogger(getClass().getName());
         saveLogs(log);
