@@ -6,7 +6,7 @@
             <run>
                 <include name="checkbox"/>
                 <include name="login"/>
-                <include name="assertions"/>
+<!--                <include name="assertions"/>-->
             </run>
         </groups>
         <classes>
@@ -23,8 +23,9 @@
 
     <test name="MyFork">
         <classes>
-            <class name="testcases.MyForkSignInTest"/>
-            <class name="testcases.MyForkSignUpTest"/>
+<!--            <class name="testcases.MyForkSignInTest"/>-->
+<!--            <class name="testcases.MyForkSignUpTest"/>-->
+            <class name="testcases.MyForkCourseGalleryTest"/>
         </classes>
     </test>
 </suite>

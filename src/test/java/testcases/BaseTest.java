@@ -2,6 +2,7 @@ package testcases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pajeobjects.*;
@@ -29,7 +30,11 @@ public class BaseTest {
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() throws IOException {
         System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumFramework/src/test/resources/webdrivers/chromedriver");
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        driver = new ChromeDriver(options);
+//        driver = new ChromeDriver();
         log = Logger.getLogger(getClass().getName());
         saveLogs(log);
 
