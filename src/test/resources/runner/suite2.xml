@@ -3,12 +3,14 @@
 <suite name="Suite #2" parallel="tests" thread-count="2" verbose="1" >
 
     <test name="BankOfAmerica">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="testcases.EverydayBankingTest"/>
         </classes>
     </test>
 
     <test name="Amazon">
+        <parameter name="browser" value="chrome"/>
         <groups>
             <run>
                 <include name="driver"/>

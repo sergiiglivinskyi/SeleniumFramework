@@ -2,6 +2,7 @@
 
 <suite name="Suite #1" parallel="classes" thread-count="2" verbose="1" >
     <test name="BestBuy">
+        <parameter name="browser" value="firefox"/>
         <groups>
             <run>
                 <include name="checkbox"/>
@@ -22,6 +23,7 @@
     </test>
 
     <test name="MyFork">
+        <parameter name="browser" value="firefox"/>
         <classes>
 <!--            <class name="testcases.MyForkSignInTest"/>-->
 <!--            <class name="testcases.MyForkSignUpTest"/>-->
