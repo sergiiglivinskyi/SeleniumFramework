@@ -6,8 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -121,7 +124,24 @@ public class BaseMain {
         return codes; //a return of a list with codes for further verification
     }
 
+    public static Object[][] getTestData(String fileName, int numberOfElements) throws IOException {
+        ArrayList<Object> out = new ArrayList<>();
+        Files.readAllLines(Paths.get(fileName)).forEach(s -> {
+            String[] data = s.split(",");
+            if(numberOfElements == 1) {
+                out.add(new Object[]{data[0]});
+            } else if (numberOfElements == 2) {
+                out.add(new Object[]{data[0], data[1]});
+            } else if (numberOfElements == 3) {
+                out.add(new Object[]{data[0], data[1], data[2]});
+            } else if (numberOfElements == 4) {
+                out.add(new Object[]{data[0], data[1], data[2], data[3]});
+            }
+        });
+        return out.toArray(new Object[out.size()][]);
+    }
 
-
-
+    public String getTitle() {
+        return driver.getTitle();
+    }
 }

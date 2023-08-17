@@ -5,10 +5,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import pajeobjects.*;
 
 import java.io.IOException;
@@ -36,7 +33,7 @@ public class BaseTest {
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     @Parameters("browser")
-    public void startDriver(@Optional("sauce-edge") String browser) throws IOException {
+    public void startDriver(@Optional("chrome") String browser) throws IOException {
 
         if(browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumFramework/src/test/resources/webdrivers/chromedriver");
@@ -107,5 +104,10 @@ public class BaseTest {
         SimpleFormatter formatter = new SimpleFormatter();
         fileHandler.setFormatter(formatter);
         log.info("==================THIS IS THE BEGINNING OF THE TEST==================");
+    }
+
+    @DataProvider(name = "LoginInfo")
+    public static Object[][] getUserDataAndPageTitleName() throws IOException {
+        return BaseMain.getTestData("LoginInfo.csv", 3);
     }
 }
