@@ -1,6 +1,5 @@
 package testcases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginWithDDTTest extends BaseTest{
@@ -10,6 +9,6 @@ public class LoginWithDDTTest extends BaseTest{
         myForkHomePage.openWebsite();
         myForkHomePage.openSignInPage();
         myForkSignInPage.loginWithCredentials(username, password);
-        Assert.assertEquals(myForkHomePage.getTitle(), expectedTitle);
+        myForkHomePage.validatePageTitle(expectedTitle);
     }
 }

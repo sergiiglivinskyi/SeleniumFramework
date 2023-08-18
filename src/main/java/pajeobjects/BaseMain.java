@@ -93,6 +93,15 @@ public class BaseMain {
         log.info("Validation passed successfully. Integer values are the same");
     }
 
+    public void validateStringWithAssertEqual(String actualValue, String expectedValue) {
+        Assert.assertEquals(actualValue, expectedValue);
+        log.info("Validation passed successfully. String values are the same");
+    }
+
+    public void validatePageTitle(String expectedValue) {
+        validateStringWithAssertEqual(driver.getTitle(), expectedValue);
+    }
+
 
     //HTTP REQUESTS
     public List<Integer> verifyLinkActive(){
@@ -139,9 +148,5 @@ public class BaseMain {
             }
         });
         return out.toArray(new Object[out.size()][]);
-    }
-
-    public String getTitle() {
-        return driver.getTitle();
     }
 }
