@@ -120,8 +120,4 @@ public class BaseMain {
         }
         return codes; //a return of a list with codes for further verification
     }
-
-
-
-
 }

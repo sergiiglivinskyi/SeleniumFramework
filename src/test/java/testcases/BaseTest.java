@@ -33,10 +33,11 @@ public class BaseTest {
     MyForkCourseGalleryPage myForkCourseGalleryPage;
     MyForkQuizPage myForkQuizPage;
     AskQuestionPage askQuestionPage;
+    PlayersPage playersPage;
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     @Parameters("browser")
-    public void startDriver(@Optional("sauce-edge") String browser) throws IOException {
+    public void startDriver(@Optional("chrome") String browser) throws IOException {
 
         if(browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "/Users/serhii/Documents/SDET_COURSE/SeleniumFramework/src/test/resources/webdrivers/chromedriver");
@@ -89,6 +90,7 @@ public class BaseTest {
         myForkCourseGalleryPage = new MyForkCourseGalleryPage(driver, log);
         myForkQuizPage = new MyForkQuizPage(driver, log);
         askQuestionPage = new AskQuestionPage(driver,log);
+        playersPage = new PlayersPage(driver, log);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
