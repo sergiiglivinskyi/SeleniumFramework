@@ -132,7 +132,7 @@ public class BaseMain {
         }
         return codes; //a return of a list with codes for further verification
     }
-
+  
     public static Object[][] getTestData(String fileName, int numberOfElements) throws IOException {
         ArrayList<Object> out = new ArrayList<>();
         Files.readAllLines(Paths.get(fileName)).forEach(s -> {

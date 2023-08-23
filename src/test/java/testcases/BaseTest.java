@@ -30,6 +30,7 @@ public class BaseTest {
     MyForkCourseGalleryPage myForkCourseGalleryPage;
     MyForkQuizPage myForkQuizPage;
     AskQuestionPage askQuestionPage;
+    PlayersPage playersPage;
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     @Parameters("browser")
@@ -86,6 +87,7 @@ public class BaseTest {
         myForkCourseGalleryPage = new MyForkCourseGalleryPage(driver, log);
         myForkQuizPage = new MyForkQuizPage(driver, log);
         askQuestionPage = new AskQuestionPage(driver,log);
+        playersPage = new PlayersPage(driver, log);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
