@@ -1,5 +1,7 @@
 package pajeobjects;
 
+import interfaces.Quizzes;
+import interfaces.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,8 +12,12 @@ import java.util.logging.Logger;
 
 public class HomePage extends BaseMain{
 
+    Quizzes quizzes;
+    Util util;
+
     public HomePage(WebDriver driver, Logger log){
         super(driver, log);
+        util = new Util(driver, log, "QA");
     }
 
     //URLs
@@ -27,5 +33,9 @@ public class HomePage extends BaseMain{
         WebDriverWait waitForDropdownToLoad = new WebDriverWait(driver, Duration.ofSeconds(20));
         waitForDropdownToLoad.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(btnSignInMainPage)));
         driver.findElement(By.xpath(btnSignInMainPage)).click();
+    }
+
+    public void returnQuizName() {
+        util.quizzes.quizName();
     }
 }

@@ -16,7 +16,7 @@ public class PlayersPage extends BaseMain{
     }
 
     Map<String, List<String>> info;
-    
+
 
     By tableRows = By.xpath("//table[@class='stats-table player-ratings-table']//tbody/tr");
 
