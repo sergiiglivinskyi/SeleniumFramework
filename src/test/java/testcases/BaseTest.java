@@ -24,6 +24,7 @@ public class BaseTest {
     MyForkSignInPage myForkSignInPage;
     MyForkCourseGalleryPage myForkCourseGalleryPage;
     MyForkQuizPage myForkQuizPage;
+    MyForkStudyPage myForkStudyPage;
 
     @BeforeMethod(groups = {"checkbox", "login", "assertions", "driver"}, alwaysRun = true)
     public void startDriver() throws IOException {
@@ -40,6 +41,7 @@ public class BaseTest {
         myForkSignInPage = new MyForkSignInPage(driver, log);
         myForkCourseGalleryPage = new MyForkCourseGalleryPage(driver, log);
         myForkQuizPage = new MyForkQuizPage(driver, log);
+        myForkStudyPage = new MyForkStudyPage(driver, log);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
